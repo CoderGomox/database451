@@ -1,0 +1,39 @@
+<!--
+  Generated template for the InputCoffeePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Input Coffee Shop</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="addCoffee()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label color="primary" floating>Coffee</ion-label>
+        <ion-input type="text" [(ngModel)]="input.name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" floating>City</ion-label>
+        <ion-input type="text" [(ngModel)]="input.city" name="City"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block *ngIf="!this.id">Add Coffeeshop</button>
+      <button ion-button type="submit" block *ngIf="this.id">Update Coffee</button>
+    </ion-list>
+    <!-- <button ion-button type="submit" block *ngIf="!this.id">Submit</button> -->
+  </form>
+  <button ion-button block *ngIf="this.id" (click)="review(this.id)">Review Coffee</button>
+  <button ion-button (click)="deleteCoffee()" block *ngIf="this.id" color="danger">Delete</button>
+</ion-content>

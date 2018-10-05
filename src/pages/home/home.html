@@ -1,0 +1,21 @@
+<!-- <img id="bgrimage" src="../../assets/imgs/background.jpeg" alt="imagenotavailable"> -->
+<ion-content class ="getstart" padding>
+    <p></p>
+    <h4 class=titre text-center style="color: white">Welcome to</h4>
+    <h1 class=title text-center style="color: white">CoffeeShop</h1>
+
+    <ion-row>
+      <ion-col width-50 style="text-align: center">
+        <button ion-button color="secondary" round outline menuToggle>Open Menu</button>
+      </ion-col>
+    </ion-row>
+  <ion-list>
+    <ion-list-header style="text-align: center; color: white">
+      List of CoffeeShops
+    </ion-list-header>
+    <ion-item class="item item-trns" *ngFor="let cs of listCoffee">
+      <ion-label (click)="toEdit(cs.id)">{{cs.name}}</ion-label>
+      <ion-note (click)="toEdit(cs.id)" item-end>{{cs.city}}</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

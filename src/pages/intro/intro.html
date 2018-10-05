@@ -1,0 +1,17 @@
+<ion-slides pager="true" loop="true" style="background-color: black">
+  <ion-slide *ngFor="let image of [1,2,3,4]">
+    <img data-src="./assets/imgs/slide{{image}}.jpeg">
+  </ion-slide>
+  <ion-slide>
+    <ion-row>
+      <ion-col>
+        <img src="./assets/imgs/slide5.jpeg" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="light" (click)="goToHome()">Start Using My App</button>
+      </ion-col>
+    </ion-row>
+  </ion-slide>
+</ion-slides>

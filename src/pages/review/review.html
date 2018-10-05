@@ -1,0 +1,66 @@
+<ion-header>
+
+</ion-header>
+<ion-content>
+  <ion-list radio-group [(ngModel)]="rating">
+    <ion-list-header>
+      Ratings
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-radio value="1"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-radio value="2"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-radio value="3"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-radio value="4"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-radio value="5"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-textarea [(ngModel)]="Description" placeholder="Enter Description">
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="subInfo(rating, Description)" (click)="Exit()">Submit</button>
+  <button ion-button full (click)="Exit()" color="danger">Cancel</button>
+</ion-content>

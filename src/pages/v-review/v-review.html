@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>View Reviews</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let dat of data">
+    <ion-card-header>
+      {{dat.coffeeShop['name']}}
+    </ion-card-header>
+    <ion-card-content>
+      {{dat.comments}} <br>
+      {{dat.rating}}*<ion-icon name="star"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
