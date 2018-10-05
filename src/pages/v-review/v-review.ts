@@ -29,7 +29,9 @@ export class VReviewPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VReviewPage');
-    this.reviewApi.find({"include":"coffeeShop"}).subscribe(
+    this.reviewApi.find({
+      "include":["coffeeShop","user"]}
+      ).subscribe(
       data => {
         console.log(data)
         this.data = data

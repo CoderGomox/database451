@@ -1,3 +1,4 @@
+import { LoopBackAuth } from './../../shared/sdk/services/core/auth.service';
 import { ReviewApi } from './../../shared/sdk/services/custom/Review';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
@@ -22,7 +23,8 @@ export class ReviewPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public reviewApi: ReviewApi
+    public reviewApi: ReviewApi,
+    public auth: LoopBackAuth
   ) {
     this.id =navParams.get('id')
 
@@ -42,7 +44,8 @@ export class ReviewPage {
       "date": Date.now(),
       "comments": d,
       "rating": r,
-      "coffeeshopid": this.id
+      "coffeeshopid": this.id,
+      "pub_id":this.auth.getCurrentUserId()
     }).subscribe()
   }
 

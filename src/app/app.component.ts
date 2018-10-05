@@ -1,3 +1,6 @@
+import { LoopBackAuth } from './../shared/sdk/services/core/auth.service';
+import { RegisterPage } from './../pages/register/register';
+import { LoginPage } from './../pages/login/login';
 import { VReviewPage } from './../pages/v-review/v-review';
 import { ReviewPage } from './../pages/review/review';
 import { SearchbarPage } from './../pages/searchbar/searchbar';
@@ -26,16 +29,17 @@ export class MyApp {
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    public storage: Storage
+    public storage: Storage,
+    public auth: LoopBackAuth
   ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'SearchBar' , component: SearchbarPage },
-      { title: 'InputCoffee' , component: InputCoffeePage },
-      { title: 'View Review', component: VReviewPage}
+      { title: 'SearchBar', component: SearchbarPage },
+      { title: 'InputCoffee', component: InputCoffeePage },
+      { title: 'View Review', component: VReviewPage }
     ];
 
   }
@@ -45,7 +49,7 @@ export class MyApp {
       this.storage.get('introShown').then((result) => {
 
         if (result) {
-          this.rootPage = HomePage;
+          // this.rootPage = LoginPage;
         } else {
           this.rootPage = IntroPage;
           this.storage.set('introShown', true);
@@ -56,9 +60,16 @@ export class MyApp {
       });
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      if (!this.auth.getCurrentUserId()) {
+        this.nav.setRoot(LoginPage)
+      }
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
+
   }
 
   openPage(page) {

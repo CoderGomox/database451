@@ -1,3 +1,5 @@
+import { RegisterPage } from './../pages/register/register';
+import { LoginPage } from './../pages/login/login';
 import { VReviewPage } from './../pages/v-review/v-review';
 import { ReviewPage } from './../pages/review/review';
 import { SearchbarPage } from './../pages/searchbar/searchbar';
@@ -28,7 +30,9 @@ import { InputCoffeePage } from '../pages/input-coffee/input-coffee';
     InputCoffeePage,
     SearchbarPage,
     ReviewPage,
-    VReviewPage
+    VReviewPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { InputCoffeePage } from '../pages/input-coffee/input-coffee';
     InputCoffeePage,
     SearchbarPage,
     ReviewPage,
-    VReviewPage
+    VReviewPage,
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,

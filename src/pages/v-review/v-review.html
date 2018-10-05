@@ -11,7 +11,7 @@
 <ion-content padding>
   <ion-card *ngFor="let dat of data">
     <ion-card-header>
-      {{dat.coffeeShop['name']}}
+      {{dat.coffeeShop['name']}} reviewed by {{dat.user.email}}
     </ion-card-header>
     <ion-card-content>
       {{dat.comments}} <br>
